@@ -1,0 +1,23 @@
+﻿@model _5TW.Models.AccessoriesViewModel
+
+<div class="navbar-collapse collapse" style="background-color:#cccccc; width: 100%">
+    <ul class="nav navbar-nav" style=" margin-left:100px;">
+        <li style="font-size:22px;">@*@Html.ActionLink("Accessories", "Accessories", "Home")*@<h2 style="padding-bottom:10px; padding-top:10px; line-height:20px">Accessories</h2></li>
+    </ul>
+</div>
+@{
+    foreach (var item in Model.lsAccessories)
+    {
+        var imgPaths = item.Picture.Split(';');
+        <div class="item">
+            <img src="@imgPaths[0]" alt="New York" style="width: 100%; height:600px; position:relative;">
+            <div class="col-sm-12">
+                <div class="hero-text" style="bottom:5%;">
+                    <h3 class="headline" style="text-align:center;color:#000000; background:rgba(255,255,255,0.3); margin-left:25%; margin-right:25%;">@item.Name</h3>
+                    <p class="subheadline" style="color:#ffffff; background:rgba(0,0,0,0.3); margin-left:25%; margin-right:25%;">@item.Description</p>
+                    <p>@Html.RouteLink("Learn more ", new { action = "Details", controller = "Products", id = item.ProID })</p>
+                </div>
+            </div>
+        </div>
+    }
+}

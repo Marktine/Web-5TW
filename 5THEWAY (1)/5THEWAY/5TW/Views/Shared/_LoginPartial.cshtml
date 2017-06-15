@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <div class="nav navbar-nav navbar-right">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color:#000000; border-color:#000000; margin-top:7.5px;">
+                <p>(0)<i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 20px;"></i> <span class="caret"></span></p>
+            </button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-header"><h5>Hello @User.Identity.GetUserName()</h5></li>
+                <li>
+                    @Html.ActionLink("Your Informations", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            </ul>
+        </div>
+    </div>
+    }
+}
+else
+{
+    <div class="nav navbar-nav navbar-right" >
+        <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color:#000000; border-color:#000000; margin-top:7.5px;">
+            <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 20px;"></i>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+        </div>
+        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
+    </div>
+}

@@ -1,0 +1,17 @@
+﻿.container .hero-text {
+    width:100%;
+     position:relative; 
+     color:#000000;
+     font-family: 'Roboto Light', sans-serif;
+     font-size: 1.6em;
+}
+.container .item {
+    margin-top:20px;
+}
+
+.jumbotron{
+    background-color: #f2c252;
+    font-family:Roboto, sans-serif;
+    color: black;
+    text-align: center;
+}

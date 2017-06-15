@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44394b9b92d74035b1a85b25313103fd" Name="Diagram1">
+        <EntityTypeShape EntityType="webBanHangModel.AccountRole" Width="1.5" PointX="1.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.Account" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.ClothesType" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.Collection" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.Order" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.OrderDetail" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.OrderStatu" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.Product" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.ProductStatu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="webBanHangModel.sysdiagram" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="webBanHangModel.FK_Accounts_AccountRole" ManuallyRouted="false" />
+        <AssociationConnector Association="webBanHangModel.FK_Order_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="webBanHangModel.FK_Product_ClothesType" ManuallyRouted="false" />
+        <AssociationConnector Association="webBanHangModel.FK_Product_Collection" ManuallyRouted="false" />
+        <AssociationConnector Association="webBanHangModel.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="webBanHangModel.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="webBanHangModel.FK_OrderDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="webBanHangModel.FK_Product_ProductStatus" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,40 @@
+﻿@model _5TW.Models.TopViewModel
+@{
+    ViewBag.Title = "Shirts";
+}
+<link href="~/Content/marleyEffect.css" rel="stylesheet" />
+<div class="navbar-collapse collapse" style="background-color:#cccccc; width: 100%">
+        <ul class="nav navbar-nav">
+            <li class="list-group-item-heading" style="margin-right: 100px; vertical-align:middle"><h4 style="font-family: 'Roboto'; font-size:24px; color: #428bca">@Model.Title</h4></li>
+            @for (int i = 0; i < Model.AllShirtsType.Count; i++)
+            {
+                <li class="li-header">@Html.RouteLink(Model.AllShirtsType[i], new { action = "Top", controller = "Products", idtype = i + 1 })</li>
+            }
+        </ul>
+    </div>
+<div class="container" style=" background-color: #d9d0dd">
+    @foreach (var item in Model.lstShirts)
+    {
+        <div class="col-sm-6" style="top:10px; padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:10px;">
+            <figure class="effect-marley">
+                @{
+                    var imgPaths = item.Picture.Split(';');
+                }
+                <img src="@imgPaths[0]" style="width: 100%; height: 400px;" />
+                <figcaption>
+                    <h2 style="color: #b21137">@item.Name</h2>
+                    <p style="color: #b21137">
+                        <b>
+                            Collection: @item.Collection.CollectionName <br />
+                            Size: @item.Size <br />
+                            Price: @item.Price <br />
+                            @Html.ActionLink("Details", "Details", new { id = item.ProID })
+                        </b>
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+ }
+</div>
+
+

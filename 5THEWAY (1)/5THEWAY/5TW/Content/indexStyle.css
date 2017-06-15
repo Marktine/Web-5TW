@@ -1,0 +1,53 @@
+﻿.btn.btn-default{
+    color:white;
+    margin-top: 4px;
+    background: rgba(0,0,0,0.5);
+    /*color: #070516;
+    border-radius: 5px;*/
+    border-color:transparent;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    font-size: 15px;
+    /*border-width: 1px;*/
+    font-family:  Roboto;
+}
+
+.btn.btn-default:hover{
+    font-size: 18px;
+    background-color: #161733;
+    color:white;
+    box-shadow: 0px 2px 10px 3px #161733;
+    border:0;
+}
+
+.row h2{
+    color: #3864aa;
+    border-radius: 5px;
+}
+
+.row .Collection.col-md-3{
+     height:220px; 
+     background-image:url(../IMGSlider/collection.jpg); 
+     background-size:cover;
+}
+
+.row .Collab.col-md-3{
+   height:220px; 
+   background-image:url(../IMGSlider/xRetroKids.jpg); 
+   background-repeat: no-repeat; 
+   background-position: center; 
+   background-size:cover;
+}
+
+.row .OOTD.col-md-3{
+     height:220px; 
+     background-image:url(../IMGSlider/gangnamstyle.jpg); 
+     background-size:cover;
+}
+
+.row .Acessories.col-md-3{
+     height:220px; 
+     background-image:url(../IMGSlider/lanyard.jpg); 
+     background-size:cover; 
+     background-position: center;
+}

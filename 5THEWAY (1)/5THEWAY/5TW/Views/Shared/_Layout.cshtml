@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="~/fonts/fa/fa/css/font-awesome.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/SearchBar.js"></script>
+    <link href="~/Content/SearchBar.css" rel="stylesheet"/>
+    @*<link href="~/Content/Site.css" rel="stylesheet"/>*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home", null)">
+                    <img src="~/5TWlogo.png" style="vertical-align:middle; width: 55px; height:50px" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="col-sm-12">
+                    <div class="col-sm-12">
+                        <ul class="nav navbar-nav" style="position:relative;">
+                            @*<li class="li-header">@Html.ActionLink("Shirt", "Shirt", "Products", new { idtype = 1 })</li>*@
+                            <li class="li-header">@Html.RouteLink("Top", new { action = "Top", controller = "Products" })</li>
+                            <li class="li-header">@Html.RouteLink("Bottom", new { action = "Bottom", controller = "Products" })</li>
+                            <li class="li-header">@Html.RouteLink("Collections", new { action = "Index", controller = "Collections" })</li>
+                            <li class="li-header">@Html.RouteLink("Accessories", new { action = "Accessories", controller = "Products" })</li>
+                        </ul>
+                        <div class="col-md-4" style="position: relative;">
+                            <div id="sb-search" class="sb-search">
+                                @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+                                {
+                                <form class="navbar-form">
+                                    <input class="sb-search-input " onkeyup="buttonUp();" placeholder="Search an item" type="search" value="" name="searchKey" id="searchKey">
+                                    <input class="sb-search-submit" type="submit">
+                                    <span class="sb-icon-search"><i class="fa fa-search"></i></span>
+                                </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    @Html.Partial("_LoginPartial")
+                </div>
+        </div>
+    </div>
+        </div>
+    <div class="col-sm-12">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footerleft ">
+                    <div class="logofooter"><img src="~/5TWlogo.png" style="height: 50px; width: 50px;" /></div>
+                    <h3 style="color: white"> Something about 5Theway: </h3>
+                    <blockquote>
+                        <p>
+                            "là một hãng thời trang Urban Streetwear đến từ Sài Gòn. Không đi theo hay bị ảnh hưởng bởi một trường phái nhất định nào,
+                            cảm hứng thiết kế của hãng xuất phát từ nhu cầu của những người trẻ bình thường – nhu cầu được ăn mặc đẹp và hợp thời trang..."
+                        </p>
+                        <a href="@Url.Action("Information", "Home", null)">Learn more about them</a>
+                    </blockquote>
+                    <p><i class="fa fa-phone"></i> Phone: +84 9999 999 999</p>
+                    <p><i class="fa fa-envelope"></i> E-mail : 5tw@example.com</p>
+                </div>
+                <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">Shortcut links</h6>
+                    <ul class="footer-ul">
+                        <li>@Html.RouteLink("Top", new { action = "Top", controller = "Products" })</li>
+                        <li>@Html.RouteLink("Bottom", new { action = "Bottom", controller = "Products" })</li>
+                        <li>@Html.RouteLink("Collections", new { action = "Index", controller = "Collections" })</li>
+                        <li>@Html.RouteLink("Accessories", new { action = "Accessories", controller = "Products" })</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">Something about Heathens</h6>
+                    <div class="post">
+                        <p>
+                            Heathens is the name which has been chosen by all the members in our group (it does not contains any special meaning,
+                            we've chosen it because we like it). Heathens does not have a leader, each member is a leader, why i say so ?,
+                            because all the decisions that we make are based on agreements of each member in the group, we discuss together to make the final decision that we think it's the best,
+                            by this way, everythings will be easier right ? , we have some offline (meetup) on monday and weekends everyweek in that time we'll learn together and chat.<span><a href="http://heathens.pw/"><i class="fa fa-angle-double-right"></i>Learn more</a></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <div class="fb-xfbml-parse-ignore">
+                            <blockquote><a href="https://www.facebook.com/cuong.trinhminh.58">Trịnh Minh Cường</a> 1460173</blockquote>
+                            <blockquote><a href="https://www.facebook.com/thanhdanh.vo.503?fref=ts">Võ Thanh Danh</a> 1460181</blockquote>
+                            <img src="~/USlogo.png" style="width:300px; height:75px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer start from here-->
+    <div class="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p>&copy; 2017 - Heathens</p>
+            </div>
+            <div class="col-md-6">
+                <ul class="bottom_ul">
+                    <li><a href="http://heathens.pw/">heathens.pw</a></li>
+                    <li><a href="http://heathens.pw/">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

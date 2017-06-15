@@ -1,0 +1,25 @@
+﻿@model _5TW.Models.SearchViewModel
+<link href="~/Content/marleyEffect.css" rel="stylesheet" />
+<div class="container" style="background-color: #d9d0dd">
+    @foreach (var item in Model.lsProduct)
+    {
+        <div class="col-sm-6" style="top:10px; padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:10px;">
+            <figure class="effect-marley">
+                @{
+                    var imgPaths = item.Picture.Split(';');
+                }
+                <img src="@imgPaths[0]" style="width: 100%; height: 400px;" />
+                <figcaption>
+                    <h2 style="color: #b21137">@item.Name</h2>
+                    <p style="color: #b21137">
+                        <b>
+                            Size: @item.Size <br />
+                            Price: @item.Price <br />
+                            @Html.RouteLink("Details", new { action = "Details", controller = "Products", idtype = item.ProID })
+                        </b>
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+        }
+</div>

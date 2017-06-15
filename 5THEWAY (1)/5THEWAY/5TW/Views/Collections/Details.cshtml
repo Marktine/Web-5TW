@@ -1,0 +1,42 @@
+﻿@model _5TW.Models.Collection
+
+@{
+    ViewBag.Title = "Collection Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Collection</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CollectionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollectionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoverPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoverPicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descriptions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descriptions)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CollectionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

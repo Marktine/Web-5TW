@@ -1,0 +1,94 @@
+﻿.jumbotron{
+    text-align:center;
+    background-color: #c14f03;
+    margin:0;
+}
+
+.background-image{
+  background-image: url('/IMGSlider/5TWbackground.jpg');
+  background-position: center;
+  background-size: cover;
+  background-position-y: center;
+  display: block;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  height: 400px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.jumbotron h1{
+    font-family: 'Roboto Thin';
+    font-size: 36px;
+    color: white;
+}
+
+.jumbotron h2{
+    color: white;
+    font-family: 'Roboto Thin';
+}
+ 
+.row{
+    height: 400px;
+}
+
+section#loginForm{
+    position: relative;
+    z-index:999;
+    width: 400px;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-family: 'Roboto Light';
+    font-size: 15px;
+}
+
+.btn.btn-default{
+    background-color: transparent;
+    color: #0d1026;
+    transition: 0.5s all ease;
+
+}
+
+label{
+    color: white;
+    transition: 0.4s all ease;
+}
+
+label:hover{
+    color: #159dbf;
+}
+
+.btn.btn-default:hover{
+    background-color: #159dbf;
+    box-shadow: 0px 0px 10px 10px #159dbf;
+    color: white;
+    border:0;
+    font-size: 22px;
+}
+
+p{
+    color: #080b21;
+}
+
+a#register{
+    border: 1px solid white;
+    padding: 4px;
+    border-radius: 5px;
+    color: #1e3747;
+    transition: 0.4s  linear  color;
+}
+
+a#register:hover{
+    background-color: #159dbf;
+    box-shadow: 0px 0px 10px 10px #159dbf;
+    color: white;
+    border:0;
+    text-decoration:none;
+}
+
+input.form-control{
+    color: #010528;
+    background-color: transparent;
+}
