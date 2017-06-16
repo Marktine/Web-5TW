@@ -39,6 +39,9 @@
         <img src="@imgPaths[0]" alt="1" style="width: 100%; height:575px;">
     </div>
     <br />
+    <div class="col-sm-12 jumbotron">
+        <h1 style="text-align:center">@Model.Description</h1>
+    </div>
     <div class="item" >
         <div class="col-sm-6">
             <img src="@imgPaths[1]" alt="2" style="width: 100%; height:575px;"/>
@@ -47,31 +50,7 @@
             <img src="@imgPaths[2]" alt="3" style="width: 100%; height:575px;"/>
         </div>
     </div>
-    @*<div class="item">
-        <img src="@imgPaths[0]" style="width: 100%; height:600px; position:relative;"/>
-        <div class="col-sm-12">
-            <div class="hero-text wrapper" style="top:5%;">
-                <h1 class="headline" style="text-align:center;">@Html.DisplayFor(model => model.Name)</h1>
-                @*<p>
-        @item.Descriptions
-    </p>
-    <p>@Html.RouteLink("Learn more", new { action = "Details", controller = "Products", id = item.CollectionID })</p>
-            </div>
-        </div>
-
-    </div>*@
     <hr />
-
-        <li>
-            
-        </li>
-        <li>
-            @Html.DisplayNameFor(model => model.Collection.CollectionName)
-            <p>
-                @Html.DisplayFor(model => model.Collection.CollectionName)
-            </p>
-        </li>
-    </ul>
 </div>
 <p>
     <input type="button" value="GO BACK" class="btn btn-primary"

@@ -114,7 +114,7 @@ namespace _5TW.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = db.Products.First(p => p.ProID == id);
             if (product == null)
             {
                 return HttpNotFound();

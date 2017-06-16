@@ -25,20 +25,20 @@ namespace _5TW.Controllers
         // GET: Collections/Details/5
         public ActionResult Details(int? id)
         {
+            DetailCollectionViewModel dcvm = new DetailCollectionViewModel();
+            dcvm.Products = new List<Product>();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Collection collection = db.Collections.Find(id);
-            if (collection == null)
+            dcvm.CollectionName = db.Collections.First(c => c.CollectionID == id).CollectionName;
+            dcvm.Products = db.Products.Where(c => c.CollectionID == id).ToList();
+            if (dcvm.CollectionName == null)
             {
                 return HttpNotFound();
             }
-            return View(collection);
+            return View(dcvm);
         }
-       
-
-
         // GET: Collections/Create
         public ActionResult Create()
         {
